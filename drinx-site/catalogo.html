@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos | DRINX</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="store-strip">
+    <div class="container">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>Cardápio espelhado de DRINX • Grande Colorado/Sobradinho-DF</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/logo-placeholder.svg" alt="DRINX" class="logo" />
+        <div class="brand-text">
+          <strong>DRINX</strong>
+          <small>Produtos</small>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./catalogo.html" class="active">Produtos</a>
+        <a href="./combos.html">Combos</a>
+        <a href="./admin.html" class="nav-admin">ADMIN</a>
+      </nav>
+
+      <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5561996404046">
+        Pedir no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main class="main" data-page="catalog">
+    <section class="container">
+      <div class="section-head">
+        <h1>Produtos</h1>
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Buscar produto..." />
+        </div>
+      </div>
+
+      <div id="comboTicker" class="combo-ticker" aria-label="Combos em destaque" hidden>
+        <div id="comboTickerTrack" class="combo-track"></div>
+      </div>
+
+      <div id="categoryChips" class="chips"></div>
+      <p id="categoriesInfo" class="muted"></p>
+      <p id="catalogEmpty" class="empty-note" hidden>Nenhum produto encontrado com esse termo.</p>
+    </section>
+
+    <div id="categoriesContainer"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>DRINX</strong>
+        <div class="muted">Catálogo DRINX</div>
+      </div>
+      <div class="footer-links">
+        <a target="_blank" rel="noopener" href="https://wa.me/5561996404046">WhatsApp</a>
+        <a target="_blank" rel="noopener" href="https://instagram.com/drinx_distribuidora">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" target="_blank" rel="noopener"
+     href="https://wa.me/5561996404046" aria-label="Pedir no WhatsApp">
+    WhatsApp
+  </a>
+
+  <div class="hours-corner" aria-label="Horário de funcionamento">
+    Terça a domingo • 13h às 00h
+  </div>
+
+  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema" title="Ativar tema escuro">
+    ☾
+  </button>
+
+  <script src="./theme.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

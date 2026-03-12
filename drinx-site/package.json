@@ -1,0 +1,17 @@
+{
+  "name": "drinx-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site DRINX com catálogo e banco de pedidos em SQLite",
+  "main": "server.js",
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/restart-server.ps1",
+    "dev": "node server.js",
+    "restart": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/restart-server.ps1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}

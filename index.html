@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DrinkExpress | Bebidas Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top-header">
+    <div class="brand-wrap">
+      <span class="brand-mark">D</span>
+      <div>
+        <strong>DrinkExpress</strong>
+        <p>Entrega rápida de bebidas</p>
+      </div>
+    </div>
+
+    <button id="openCartBtn" class="cart-trigger" type="button" aria-label="Abrir carrinho">
+      <span>🛒</span>
+      <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <p class="deliver">Entregar em <strong>Sobradinho/DF</strong></p>
+      <h1>Seu app de bebidas no estilo delivery</h1>
+      <p class="hero-text">Catálogo focado em bebidas com pedido fácil e finalização no WhatsApp.</p>
+    </section>
+
+    <section class="toolbar">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="Buscar bebida, marca ou categoria...">
+      </div>
+
+      <div class="select-wrap">
+        <select id="priceFilter">
+          <option value="todos">Todos os preços</option>
+          <option value="20">Até R$ 20</option>
+          <option value="50">Até R$ 50</option>
+          <option value="100">Até R$ 100</option>
+          <option value="200">Até R$ 200</option>
+        </select>
+
+        <select id="sortFilter">
+          <option value="relevancia">Mais relevantes</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+          <option value="nome">Nome (A-Z)</option>
+        </select>
+      </div>
+
+      <div id="categoryChips" class="chips"></div>
+    </section>
+
+    <section class="products-section">
+      <div class="section-head">
+        <h2>Somente Bebidas</h2>
+        <p id="productsInfo">Carregando catálogo...</p>
+      </div>
+
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Seu pedido</h2>
+      <button id="closeCartBtn" type="button" class="close-cart">×</button>
+    </div>
+
+    <ul id="cartList" class="cart-list"></ul>
+
+    <div class="cart-footer">
+      <p><span>Itens</span><strong id="cartItemsCount">0</strong></p>
+      <p><span>Total</span><strong id="cartTotal">R$ 0,00</strong></p>
+
+      <button id="checkoutBtn" class="checkout-btn" type="button">
+        Finalizar no WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

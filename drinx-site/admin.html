@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel da Loja | DRINX</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="store-strip">
+    <div class="container">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>Painel de produtos • DRINX</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/logo-placeholder.svg" alt="DRINX" class="logo" />
+        <div class="brand-text">
+          <strong>DRINX</strong>
+          <small>Painel da Loja</small>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="./index.html">Início</a>
+        <a href="./catalogo.html">Produtos</a>
+        <a href="./combos.html">Combos</a>
+        <a href="./admin.html" class="nav-admin active">ADMIN</a>
+      </nav>
+
+      <div class="admin-header-actions">
+        <button id="adminLogoutBtn" class="btn btn-soft admin-logout" type="button" hidden>Sair</button>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5561996404046">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main admin-main">
+    <section id="adminLoginSection" class="container admin-login-wrap">
+      <div class="admin-login-card">
+        <h1>Acesso ADMIN</h1>
+        <p class="muted">Faça login para acessar o cadastro de produtos.</p>
+
+        <form id="adminLoginForm" class="admin-login-form" autocomplete="off">
+          <label class="admin-field">
+            <span>Usuário</span>
+            <input id="adminUsername" type="text" placeholder="Digite o usuário" required />
+          </label>
+
+          <label class="admin-field">
+            <span>Senha</span>
+            <input id="adminPassword" type="password" placeholder="Digite a senha" required />
+          </label>
+
+          <button id="adminLoginBtn" class="btn btn-primary w-100" type="submit">Entrar no ADMIN</button>
+        </form>
+
+        <p id="adminLoginFeedback" class="muted admin-feedback"></p>
+      </div>
+    </section>
+
+    <section id="adminPanelSection" class="container" hidden>
+      <div class="section-head">
+        <h1>Cadastro de produtos</h1>
+        <span class="muted">Preço e estoque em tempo real</span>
+      </div>
+
+      <form id="adminProductForm" class="admin-form" autocomplete="off">
+        <input type="hidden" id="productId" />
+
+        <label class="admin-field">
+          <span>Nome do produto</span>
+          <input id="productName" type="text" required placeholder="Ex: JOHNNIE WALKER RED 1 LITRO" />
+        </label>
+
+        <label class="admin-field">
+          <span>Categoria</span>
+          <input id="productCategory" type="text" required placeholder="Ex: Whisky" />
+        </label>
+
+        <label class="admin-field">
+          <span>Preço (R$)</span>
+          <input id="productPrice" type="text" inputmode="decimal" placeholder="Ex: 99,99" />
+        </label>
+
+        <label class="admin-field">
+          <span>Estoque</span>
+          <input id="productStock" type="number" min="0" step="1" required placeholder="Ex: 12" />
+        </label>
+
+        <label class="admin-field admin-field-full">
+          <span>Descrição (opcional)</span>
+          <textarea id="productDescription" rows="2" placeholder="Detalhes do produto"></textarea>
+        </label>
+
+        <label class="admin-check">
+          <input id="productIsCombo" type="checkbox" />
+          <span>Marcar como combo</span>
+        </label>
+
+        <div class="admin-actions">
+          <button id="saveProductBtn" class="btn btn-primary" type="submit">Salvar produto</button>
+          <button id="cancelEditBtn" class="btn btn-soft" type="button" hidden>Cancelar edição</button>
+        </div>
+      </form>
+
+      <p id="adminFeedback" class="muted admin-feedback"></p>
+
+      <div class="admin-list-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Estoque</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="adminProductsTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="./admin.js"></script>
+</body>
+</html>

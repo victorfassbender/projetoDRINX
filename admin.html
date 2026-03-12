@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Painel Admin</title>
+</head>
+<body>
+
+<h2>Adicionar Produto</h2>
+
+<input id="nome" placeholder="Nome">
+<input id="preco" placeholder="Preço">
+<input id="imagem" placeholder="URL da imagem">
+<select id="categoria">
+  <option value="whisky">Whisky</option>
+  <option value="cerveja">Cerveja</option>
+</select>
+
+<button onclick="salvarProduto()">Salvar</button>
+
+<script>
+let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+function salvarProduto() {
+  const novo = {
+    nome: document.getElementById("nome").value,
+    preco: Number(document.getElementById("preco").value),
+    imagem: document.getElementById("imagem").value,
+    categoria: document.getElementById("categoria").value,
+    promocao: false
+  };
+
+  produtos.push(novo);
+  localStorage.setItem("produtos", JSON.stringify(produtos));
+  alert("Produto salvo!");
+}
+</script>
+
+</body>
+</html>
